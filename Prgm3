@@ -1,0 +1,33 @@
+class Product {
+    String pcode;
+    String pname;
+    double price;
+
+    public Product(String pcode, String pname, double price) {
+        this.pcode = pcode;
+        this.pname = pname;
+        this.price = price;
+    }
+}
+
+public class LowestPrice {
+    public static void main(String[] args) {
+        Product p1 = new Product("P101", "Laptop", 999.99);
+        Product p2 = new Product("P102", "Mouse", 25.00);
+        Product p3 = new Product("P103", "Keyboard", 75.00);
+
+        Product lowestPriceProduct = p1; // Assume p1 is the lowest initially
+
+        if (p2.price < lowestPriceProduct.price) {
+            lowestPriceProduct = p2;
+        }
+        if (p3.price < lowestPriceProduct.price) {
+            lowestPriceProduct = p3;
+        }
+
+        System.out.println("Product with the lowest price:");
+        System.out.println("Code: " + lowestPriceProduct.pcode);
+        System.out.println("Name: " + lowestPriceProduct.pname);
+        System.out.println("Price: $" + lowestPriceProduct.price);
+    }
+}
