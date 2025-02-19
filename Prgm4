@@ -1,0 +1,30 @@
+class Complex {
+    double real;
+    double imaginary;
+
+    public Complex(double real, double imaginary) {
+        this.real = real;
+        this.imaginary = imaginary;
+    }
+
+    public Complex add(Complex other) {
+        double sumReal = this.real + other.real;
+        double sumImaginary = this.imaginary + other.imaginary;
+        return new Complex(sumReal, sumImaginary);
+    }
+
+    public void display() {
+        System.out.println(real + " + " + imaginary + "i");
+    }
+}
+
+public class ComplexAddition {
+    public static void main(String[] args) {
+        Complex c1 = new Complex(2.5, 3.7);
+        Complex c2 = new Complex(1.2, 4.1);
+
+        Complex sum = c1.add(c2);
+        System.out.print("Sum: ");
+        sum.display();
+    }
+}
